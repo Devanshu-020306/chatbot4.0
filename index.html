@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DTE Rajasthan Chatbot</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="#4F46E5">
+<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<meta name="mobile-web-app-capable" content="yes">
+
+<body class="bg-gray-100">
+  <div class="min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-indigo-600 text-white p-4 shadow-lg">
+      <!-- place beside your other header buttons -->
+<button id="installBtn" class="p-2 rounded-full bg-indigo-500 hover:bg-indigo-700 hidden">Install</button>
+
+      <div class="container mx-auto flex justify-between items-center">
+        <h1 class="text-2xl font-bold flex items-center">
+          <i data-feather="message-circle" class="mr-2"></i> DTE Rajasthan Assistant
+        </h1>
+        <div class="flex space-x-4">
+          <button id="voiceBtn" class="p-2 rounded-full bg-indigo-500 hover:bg-indigo-700 transition">
+            <i data-feather="mic"></i>
+          </button>
+          <button id="settingsBtn" class="p-2 rounded-full bg-indigo-500 hover:bg-indigo-700 transition">
+            <i data-feather="settings"></i>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Chat container -->
+    <div class="flex-1 container mx-auto p-4 overflow-hidden">
+      <div id="chatBox" class="chat-container bg-white rounded-lg shadow-lg p-4 overflow-y-auto">
+        <div class="flex mb-4">
+          <div class="flex-shrink-0">
+            <div class="h-10 w-10 rounded-full bg-indigo-100 flex items-center justify-center">
+              <i data-feather="cpu" class="text-indigo-600"></i>
+            </div>
+          </div>
+          <div class="ml-3">
+            <div class="bg-indigo-100 rounded-lg py-2 px-4 inline-block">
+              <p class="text-gray-800">Hello! <span class="wave-animation">👋</span> I’m your DTE Rajasthan assistant. Ask me about admissions, REAP, polytechnics, scholarships, or contacts.</p>
+            </div>
+            <p class="text-xs text-gray-500 mt-1">Just now</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Input Area -->
+    <div class="bg-white border-t border-gray-200 p-4">
+      <div class="container mx-auto">
+        <div class="flex items-center">
+          <input id="userInput" type="text" placeholder="Type your question..." class="flex-1 border border-gray-300 rounded-l-lg py-3 px-4 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+          <button id="sendBtn" class="bg-indigo-600 text-white py-3 px-6 rounded-r-lg hover:bg-indigo-700 transition flex items-center">
+            <i data-feather="send" class="mr-2"></i> Send
+          </button>
+        </div>
+        <div class="mt-2 text-xs text-gray-500 flex justify-between">
+          <span>Press Enter to send</span>
+          <span id="statusIndicator" class="text-indigo-600">Connected</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
